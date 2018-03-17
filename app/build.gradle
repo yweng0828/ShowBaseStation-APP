@@ -1,0 +1,61 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 24
+    buildToolsVersion "24.0.2"
+    defaultConfig {
+        multiDexEnabled true
+        applicationId "com.coordinate_transformation.transformation"
+        minSdkVersion 17
+        targetSdkVersion 24
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        lintOptions {
+            //lint 遇到error时继续构建
+            abortOnError false
+            //build release 版本时开启lint检测
+            checkReleaseBuilds false
+            // 防止在发布的时候出现因MissingTranslation导致Build Failed!
+            disable 'MissingTranslation'
+        }
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    sourceSets {
+        main() {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+}
+
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+//    compile 'com.android.support:multidex:1.0.1'
+    compile 'com.android.support:appcompat-v7:24.2.1'
+    testCompile 'junit:junit:4.12'
+    compile 'com.squareup.okhttp3:okhttp:3.4.1'
+    compile files('src/main/libs/commons-beanutils-1.7.0.jar')
+    compile files('src/main/libs/commons-collections-3.2.1.jar')
+    compile files('src/main/libs/commons-httpclient-3.1.jar')
+    compile files('src/main/libs/commons-lang-2.3.jar')
+    compile files('src/main/libs/commons-logging-1.1.1.jar')
+    compile files('src/main/libs/ezmorph-1.0.3.jar')
+    compile files('src/main/libs/json-lib-2.2.3-jdk15.jar')
+    compile files('libs/BaiduLBS_Android.jar')
+}
+
+dependencies {
+    compile files('libs/BaiduLBS_Android.jar')
+}

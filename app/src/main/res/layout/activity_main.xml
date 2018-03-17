@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.coordinate_transformation.transformation.MainActivity">
+
+    <ProgressBar
+        android:id="@+id/process_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="点击显示位置信息"
+        android:id="@+id/txx_top"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
+
+    <TextView
+        android:text="lac:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txt_lac"
+        android:textAppearance="@style/TextAppearance.AppCompat.Light.SearchResult.Subtitle"
+        android:layout_below="@+id/txt_mcc"
+        android:layout_alignLeft="@+id/txt_mcc"
+        android:layout_alignStart="@+id/txt_mcc" />
+
+    <TextView
+        android:text="mcc: "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="31dp"
+        android:layout_marginStart="14dp"
+
+        android:id="@+id/txt_mcc"
+        android:textAppearance="@style/TextAppearance.AppCompat.Light.SearchResult.Subtitle"
+        android:layout_below="@+id/bt_showMess"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:text="点击"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="117dp"
+        android:id="@+id/bt_showMess"
+        android:layout_alignBaseline="@+id/txx_top"
+        android:layout_alignBottom="@+id/txx_top"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="27dp" />
+
+    <TextView
+        android:text="经度："
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txt_longitude"
+        android:textAppearance="@style/TextAppearance.AppCompat.Light.SearchResult.Subtitle"
+        android:layout_below="@+id/txt_lac"
+        android:layout_alignStart="@+id/txt_lac" />
+
+    <TextView
+        android:text="地址："
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txt_add"
+        android:textAppearance="@style/TextAppearance.AppCompat.Light.SearchResult.Subtitle"
+        android:layout_below="@+id/txt_longitude"
+        android:layout_alignStart="@+id/txt_longitude" />
+
+
+    <com.baidu.mapapi.map.MapView
+        android:id="@+id/bmapview"
+        android:layout_width="350dp"
+        android:layout_height="450dp"
+        android:clickable="true"
+        android:layout_marginTop="30dp"
+        android:layout_below="@+id/txt_add"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:text="cid:"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txt_cid"
+        android:textAppearance="@style/TextAppearance.AppCompat.Light.SearchResult.Subtitle"
+        android:layout_below="@+id/txt_mnc"
+        android:layout_alignStart="@+id/txt_latitude" />
+
+    <TextView
+        android:text="mnc: "
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txt_mnc"
+        android:textAppearance="@style/TextAppearance.AppCompat.Light.SearchResult.Subtitle"
+        android:layout_below="@+id/bt_showMess"
+        android:layout_alignStart="@+id/txt_cid" />
+
+    <TextView
+        android:text="纬度:"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txt_latitude"
+        android:textAppearance="@style/TextAppearance.AppCompat.Light.SearchResult.Subtitle"
+        android:layout_below="@+id/txt_cid"
+        android:layout_toEndOf="@+id/txx_top" />
+
+    <Button
+        android:text="打开GPS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txt_latitude"
+        android:layout_alignStart="@+id/txt_latitude"
+        android:id="@+id/bt_openGPS" />
+
+
+</RelativeLayout>
